@@ -37,7 +37,18 @@ GrossRevenue INT NOT NULL
 
 Insert Data
 ```SQL
-INSERT INTO
+INSERT INTO dbo.PivotTest
+(UnitNumber, PayrollDate, GrossRevenue)
+VALUES
+('111','1/1/2019','1000'),
+('222','1/1/2019','2000'),
+('111','2/1/2019','3000'),
+('222','2/1/2019','4000'),
+('111','3/1/2019','1000'),
+('222','3/1/2019','5000'),
+('111','4/1/2019','3000'),
+('222','4/1/2019','2000');
+
 ```
 
 
@@ -47,7 +58,7 @@ INSERT INTO
 SELECT 
     STUFF(
         (SELECT DISTINCT ', ' + 
-        QUOTENAME([PayrollEndingPeriod]) 
+        QUOTENAME([PayrollDate]) 
 FROM 
-    Dispatch.TruckExpense FOR XML PATH ('')),1,2,'')
+    dbo.PivotTest FOR XML PATH ('')),1,2,'')
 ```
