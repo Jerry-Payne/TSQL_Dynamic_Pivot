@@ -28,7 +28,7 @@ CREATE TABLE dbo.PivotTest
 (
 UnitNumber VARCHAR(10) NOT NULL,
 PayrollDate DATE NOT NULL,
-GrossRevenue INT NOT NULL 
+GrossRevenue DECIMAL(9,2) NOT NULL 
 );
 ```
 
