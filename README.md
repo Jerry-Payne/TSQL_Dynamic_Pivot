@@ -56,7 +56,7 @@ VALUES
 
 
 
-
+Get the Distinct values to use for Column Headers.
 ```SQL
 SELECT 
     STUFF(
@@ -66,7 +66,7 @@ FROM
     dbo.PivotTest FOR XML PATH ('')),1,2,'')
 ```
 
-Another option if you want to sort the Columns
+Another option, if you want to sort the Column Headers.
 ```SQL
 SELECT
     STUFF(
